@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>InterFang-Login</title>
+    <link rel="stylesheet" href="./style.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+        <nav>
+          <button>Sign in</button>
+        </nav>
+      
+        <div class="login-box">
+          <div class="close-btn"> X </div>
+          <div class="login-top">
+            <img src="./images/only-logo.png" alt="logo">
+          </div>
+          <div class="login-bottom">
+            <div class="user-name-box">
+              <div class="input-icon">
+                <i class="fas fa-user"></i>
+              </div>
+              <div class="inputTitle">UserName:
+              </div>
+              <input type="text" value="name" />
+            </div>
+            <div class="password-box">
+              <div class="input-icon">
+                <i class="fas fa-lock"></i>
+              </div>
+              <div class="inputTitle">Password:
+              </div>
+              <input type="text" value="password" />
+            </div>
+            <div class="mention-box">
+              <a href="#">forget password?</a>
+            </div>
+            <div class="login-agreement-part">
+              <input type="checkbox" />
+              <p>我已閱讀並且同意相關條款</p>
+            </div>
+            <div class="signin-btn-box">
+              <button>Sign In</button>
+            </div>
+            <div class="signin-btn-box">
+              <button>Sign up</button>
+            </div>
+            <div class="login-api-btn-box">
+              <div id="welcome" style="display:block">
+                <button onclick="login();">Login with FACEBOOK</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </body>
+      <script>
+        //在申請facebookAPI的時候，網域要完全對上
+        //用ajax 跨網域工作 cross-domain
+        /*
+        1.檢查使用者的登入/授權狀態
+        2.YES->開始主要程式
+        3.NO->鼓勵使用者授權
+        */
+        // This is called with the results from from FB.getLoginStatus().
+        function statusChangeCallback(response) {
+          let welcome = document.getElementById("welcome");
+          let main = document.getElementById("main");
+          main.style.display = welcome.style.display = "none";
+          console.log('statusChangeCallback');
+          console.log(response);
+          // The response object is returned with a status field that lets the
+          // app know the current login status of the person.
+          // Full docs on the response object can be found in the documentation
+          // for FB.getLoginStatus().
+          if (response.status === 'connected') { //使用者已授權
+            // Logged into your app and Facebook.
+            main.style.display = "block";
+            initMain();
+      
+            // testAPI(); //開始主程式
+          } else { //使用者未授權 -> 鼓勵使用者授權
+            // The person is not logged into your app or we are unable to tell.
+            document.getElementById('status').innerHTML = 'Please log ' +
+              'into this app.';
+            welcome.style.display = "block";
+          }
+        }
+      
+        //取得使用者所有的公開資料
+        function initMain() {
+          let main = document.getElementById("main");
+          //使用facebook graph api和 facebook 互動
+          //決定要使用者的什麼資料
+          FB.api("/me?fields=id,name,gender,locale,timezone,email,birthday", function (response) {
+            main.innerHTML = "<img src='https://graph.facebook.com/" + response.id + "/picture'/>"
+              + "Hello" + response.name;
+            //加入使用者大頭貼：https://graph.facebook.com/使用者編號/picture
+          });
+          FB.api("/me/feed", function (response) { //印出塗鴉牆貼文
+            console.log(response);
+          });
+          FB.api("/me/feed?fields=likes&limit=100", function (response) { //印出按讚者
+            console.log(response);
+          });
+        }
+      
+      
+        //如果登入頁面和主畫面要分頁，則每一頁都要重新偵測是否授權登入
+      
+        // This function is called when someone finishes with the Login
+        // Button.  See the onlogin handler attached to it in the sample
+        // code below.
+        function checkLoginState() {
+          FB.getLoginStatus(function (response) {
+            statusChangeCallback(response);
+          });
+        }
+      
+        //2.Facebook套件載入完成之後，立刻呼叫window.fbAsyncInit();
+        //fbAsyncInit名字是配合官方的FB套件，不能隨意更動
+        window.fbAsyncInit = function () {
+          //初始化Facebook套件(ex:你是誰，版本)
+          FB.init({
+            appId: '402642790191984', //應用程式的金鑰要對應！！
+            cookie: true,  // enable cookies to allow the server to access 
+            // the session
+            xfbml: true,  // parse social plugins on this page
+            version: 'v2.8' // use graph api version 2.8
+          });
+      
+          // Now that we've initialized the JavaScript SDK, we call 
+          // FB.getLoginStatus().  This function gets the state of the
+          // person visiting this page and can return one of three states to
+          // the callback you provide.  They can be:
+          //
+          // 1. Logged into your app ('connected')
+          // 2. Logged into Facebook, but not your app ('not_authorized')
+          // 3. Not logged into Facebook and can't tell if they are logged into
+          //    your app or not.
+          //
+          // These three cases are handled in the callback function.
+      
+          //偵測使用者是否登入/授權
+          //使用者的狀態，是詢問Facebook伺服器
+          FB.getLoginStatus(function (response) {
+            statusChangeCallback(response);
+          });
+      
+        };
+      
+        // 1.程式進入點：利用程式動態載入 Facebook Javascript 標準套件
+        //其實就是塞一個script到head裡面
+        //匿名函式而且立刻被執行
+        /*
+        EX:
+        function(){
+                    alert("Hello!");
+                }
+        */
+        //函式可匿名(有名字或是沒有名字)，但必須"立刻"呼叫，因為沒名字叫不到rr
+        (function (d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "https://connect.facebook.net/en_US/sdk.js";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+      
+        // Here we run a very simple test of the Graph API after login is
+        // successful.  See statusChangeCallback() for when this call is made.
+        /*
+        function testAPI() {
+            console.log('Welcome!  Fetching your information.... ');
+            FB.api('/me', function (response) {
+                console.log('Successful login for: ' + response.name);
+                document.getElementById('status').innerHTML =
+                    'Thanks for logging in, ' + response.name + '!';
+            });
+        }
+        */
+      
+        function login() {
+          FB.login(function (response) {
+            statusChangeCallback(response);
+          }, {
+              scope: "public_profile,email,user_likes,user_posts"
+      
+            }); //FB內建的登入套件
+        }
+      </script>
+
+</html>
