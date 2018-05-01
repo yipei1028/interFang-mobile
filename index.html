@@ -8,9 +8,18 @@
     <title>InterFang-Index</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
- 
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
 </head>
 
+<style>
+    .slideShow {
+        width: 900px;
+        height: 420px;
+        position: relative;
+        overflow: hidden;
+    }
+</style>
 
 <body>
 
@@ -112,19 +121,14 @@
     <!--intro-text-box end-->
 
     <!--intro-carousel-box start-->
-    <div class="owl-carousel">
-        <div class="owl-carousel-img">
-            <img src="./images/cover-0.jpg" alt=""> </div>
-        <div class="owl-carousel-img">
-            <img src="./images/cover-1.jpg" alt=""> </div>
-        <div class="owl-carousel-img">
-            <img src="./images/cover-2.jpg" alt=""> </div>
-        <div class="owl-carousel-img">
-            <img src="./images/cover-3.jpg" alt=""> </div>
-        <div class="owl-carousel-img">
-            <img src="./images/cover-4.jpg" alt=""> </div>
-        <div class="owl-carousel-img">
-            <img src="./images/cover-5.jpg" alt=""> </div>
+    <div class="w3-content w3-display-container">
+        <img class="mySlides" src="./images/cover-0.jpg" style="width:100%">
+        <img class="mySlides" src="./images/cover-1.jpg" style="width:100%">
+        <img class="mySlides" src="./images/cover-2.jpeg" style="width:100%">
+        <img class="mySlides" src="./images/cover-3.jpg" style="width:100%">
+
+        <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+        <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
     </div>
     <!--intro-carousel-box end-->
 
@@ -185,7 +189,28 @@
         document.getElementById("hide-menu-block").style.display = "none"; //隱藏透明色塊
         //把sidenav和透明色塊包在同一個class裡面，一起出現一起消失
     }
-
 </script>
+
+
+<script>
+    var slideIndex = 1;
+    showDivs(slideIndex);
+
+    function plusDivs(n) {
+        showDivs(slideIndex += n);
+    }
+
+    function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        if (n > x.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = x.length }
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        x[slideIndex - 1].style.display = "block";
+    }
+</script>
+
 
 </html>
