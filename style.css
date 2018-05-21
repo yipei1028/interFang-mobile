@@ -3,7 +3,7 @@
     margin: 0;
     text-decoration: none;
     box-sizing:border-box;
-    color:#fff;
+    color:white;
 }
 
 
@@ -323,6 +323,7 @@ footer{
     width:18%;
     height: 20px;
     text-align: center;
+    color:white;
 }
 
 .icon-name{
@@ -331,6 +332,7 @@ footer{
     height: 20px;
     font-size: 8px;
     text-align: center;
+    color:white;
 }
 
 .nav-item-row > .icon-icon:hover{
@@ -413,10 +415,22 @@ footer{
 }
 
 .article-category{
-display: inline-block;
-width:auto;
-height:50px;
-margin-left:10px;
+    display: inline-block;
+    width:auto;
+    height:50px;
+    margin-left:10px;
+    color:gray;
+}
+
+.article-content{
+    display: block;
+    margin:0 auto;
+    margin-top: 10px;
+    height: auto;
+    width: 95%;
+    border:1px solid lightgray;
+    padding: 10px;
+    color:gray;
 }
 
 .tags-container{
@@ -427,6 +441,7 @@ margin-left:10px;
 .tags-part-title{
     font-size: 20px;
     font-weight: bolder;
+    color:gray;
 }
 
 .tags-part{
@@ -506,6 +521,7 @@ margin-left:10px;
     padding: 5px;
     border-radius:5px;
     border:0px; 
+    color:gray;
   }
   
   #commentInput{
@@ -515,6 +531,7 @@ margin-left:10px;
     padding: 5px;
     border-radius:5px;
     border: 0px;
+    color:gray;
   }
 
   #nameInput:hover{
