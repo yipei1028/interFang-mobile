@@ -8,8 +8,18 @@
   <title>InterFang-Post</title>
   <link rel="stylesheet" href="./style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Quill v1.0.0 -->
+  <script src="https://cdn.quilljs.com/1.0.0/quill.js"></script>
+  <script src="https://cdn.quilljs.com/1.0.0/quill.min.js"></script>
+  <link href="https://cdn.quilljs.com/1.0.0/quill.snow.css" rel="stylesheet">
+  <link href="https://cdn.quilljs.com/1.0.0/quill.bubble.css" rel="stylesheet">
 </head>
 
+<style>
+  * {
+    color: gray;
+  }
+</style>
 
 <body>
 
@@ -56,36 +66,29 @@
 
   <!--post start-->
   <div class="post-container">
-      <div class="post-category-row">
-        <div class="post-category-item">Recent Questions</div>
-      </div>
-      <div class="post-comment-container">
-        <div class="post-comment-img">
-          <img src="./images/user-img.gif" alt="個人大頭照">
+    <div class="post-row">
+      <div class="col-lg-6">
+        <!--text editor start-->
+        <div class="editor-container">
+          <input type="text" class="post-title" placeholder="輸入標題">
+          <input type="text" class="post-tag" placeholder="輸入文章分類標籤">
+          <input type="date" class="post-date" placeholder="發文日期">
+          <div id="editor">
+          </div>
         </div>
-        <div class="post-comment-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor, eligendi?</div>
-      </div>
-      <div class="post-comment-container">
-        <div class="post-comment-img">
-          <img src="./images/user-img.gif" alt="個人大頭照">
-        </div>
-        <div class="post-comment-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor, eligendi?</div>
+        <!--text editor end-->
       </div>
     </div>
+  </div>
 
 
 
   <!--post end-->
 
 
-  <!--footer start-->
-  <footer>
-    Walk Out , Read The World.
-    <br>InterFang&copy;
-  </footer>
-  <!--footer end-->
+  
   <!--bottom navbar start-->
-  <div class="bottom-nav ">
+  <div class="bottom-nav">
     <div class="nav-item-row ">
       <a href="./index.html">
         <i class="fa fa-3x fa-home icon "></i>
@@ -135,6 +138,27 @@
     //把sidenav和透明色塊包在同一個class裡面，一起出現一起消失
   }
 
+  var quill = new Quill("#editor", {
+    theme: "snow", // 模板
+    modules: {
+      toolbar: [
+        // 工具列列表[註1]
+        ['bold', 'italic', 'underline', 'strike'], // 粗體、斜體、底線和刪節線
+        ['blockquote', 'code-block'], // 區塊、程式區塊
+        [{ 'header': 1 }, { 'header': 2 }], // 標題1、標題2
+        [{ 'list': 'ordered' }, { 'list': 'bullet' }], // 清單
+        [{ 'script': 'sub' }, { 'script': 'super' }], // 上標、下標
+        [{ 'indent': '-1' }, { 'indent': '+1' }], // 縮排
+        [{ 'direction': 'rtl' }], // 文字方向
+        [{ 'size': ['small', false, 'large', 'huge'] }], // 文字大小
+        [{ 'header': [1, 2, 3, 4, 5, 6, false] }],// 標題
+        [{ 'color': [] }, { 'background': [] }], // 顏色
+        [{ 'font': [] }], // 字體
+        [{ 'align': [] }], // 文字方向
+        ['clean'] // 清除文字格是
+      ]
+    }
+  });
 </script>
 
 </html>
