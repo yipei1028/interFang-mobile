@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="Shortcut Icon" type="image/x-icon" href="./images/favicon.ico" />
 
 </head>
 
@@ -40,32 +41,9 @@
     </nav>
     <!--top navbar end-->
 
-    <!--dropdown menu start-->
-    <div id="menu" class="dropdown-menu">
-        <div class="menu-item">
-            <a href="#">Link 1</a>
-        </div>
-        <div class="menu-item">
-            <a href="#">Link 2</a>
-        </div>
-        <div class="menu-item">
-            <a href="#">Link 3</a>
-        </div>
-        <div class="menu-item">
-            <a href="#">Link 1</a>
-        </div>
-        <div class="menu-item">
-            <a href="#">Link 2</a>
-        </div>
-        <div class="menu-item">
-            <a href="#">Link 3</a>
-        </div>
-    </div>
-    <div class="dropdown-menu" id="hide-menu-block" onclick="hideMenu()"></div>
-    <!--dropdown menu end-->
     <!--jumbotron start-->
     <div class="jumbotron">
-        <img src="./images/cover-2.jpeg" alt="">
+        <img src="./images/new-cover.jpg" alt="">
     </div>
     <!--jumbotron end-->
 
@@ -120,17 +98,16 @@
     </div>
     <!--intro-text-box end-->
 
-    <!--intro-carousel-box start-->
     <div class="w3-content w3-display-container">
-        <img class="mySlides" src="./images/cover-0.jpg" style="width:100%">
-        <img class="mySlides" src="./images/cover-1.jpg" style="width:100%">
-        <img class="mySlides" src="./images/cover-2.jpeg" style="width:100%">
-        <img class="mySlides" src="./images/cover-3.jpg" style="width:100%">
-
-        <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
-        <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+        <img class="mySlides" src="./images/article-1.png">
+        <img class="mySlides" src="./images/article-2.png">
+        <img class="mySlides" src="./images/article-3.png">
+        <div class="w3-center w3-display-bottommiddle" style="width:100%">
+            <span onclick="currentDiv(1)">&#9679;</span>
+            <span onclick="currentDiv(2)">&#9679;</span>
+            <span onclick="currentDiv(3)">&#9679;</span>
+        </div>
     </div>
-    <!--intro-carousel-box end-->
 
     <!--footer start-->
     <footer>
@@ -180,19 +157,6 @@
 </body>
 
 <script>
-    function showMenu() {
-        document.getElementById("menu").style.display = "inline-block"; //顯示sidenav
-        document.getElementById("hide-menu-block").style.display = "inline-block"; //顯示透明色塊
-    }
-    function hideMenu() {
-        document.getElementById("menu").style.display = "none"; //使用者點擊透明色塊，隱藏sidenav
-        document.getElementById("hide-menu-block").style.display = "none"; //隱藏透明色塊
-        //把sidenav和透明色塊包在同一個class裡面，一起出現一起消失
-    }
-</script>
-
-
-<script>
     var slideIndex = 1;
     showDivs(slideIndex);
 
@@ -200,17 +164,27 @@
         showDivs(slideIndex += n);
     }
 
+    function currentDiv(n) {
+        showDivs(slideIndex = n);
+    }
+
     function showDivs(n) {
         var i;
         var x = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("demo");
         if (n > x.length) { slideIndex = 1 }
         if (n < 1) { slideIndex = x.length }
         for (i = 0; i < x.length; i++) {
             x[i].style.display = "none";
         }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" w3-white", "");
+        }
         x[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " w3-white";
     }
-</script>
+</script> }
+
 
 
 </html>

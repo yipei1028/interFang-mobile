@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>InterFang-Profile</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="Shortcut Icon" type="image/x-icon" href="./images/favicon.ico" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+
+<body>
+  <!--top navbar start-->
+  <nav class="top-nav">
+    <div class="logo">
+      <img src="./images/純圖片logo.png" alt="">
+      <div class="dropdown-menu-btn">
+        <i onclick="showMenu()" class="fa fa-2x fa-caret-down"></i>
+      </div>
+    </div>
+    <div class="search-input">
+      <input type="text">
+    </div>
+    <div class="search-icon">
+      <i class="fa fa-2x fa-search"></i>
+    </div>
+  </nav>
+  <!--top navbar end-->
+  <!--my-info-part start-->
+  <div class="my-img-block">
+    <div class="my-img">
+      <img src="./images/34090669_1738968292807675_1349183784704016384_o.jpg" alt=" ">
+    </div>
+  </div>
+  <div class="my-info-bar">
+    <div class="my-info-bar-item" style="background-color: #cce7ff">
+      <a href="./profile-aboutme.html">ABOUT</a>
+    </div>
+    <div class="my-info-bar-item">
+      <a href="./profile-post.html">POST</a>
+    </div>
+    <div class="my-info-bar-item">
+      <a href="./profile-activity.html">ACTIVITY</a>
+    </div>
+    <div class="my-info-bar-item">
+      <a href="./profile-follow.html">FOLLOW</a>
+    </div>
+  </div>
+  <div class="my-posts-body "></div>
+  <!--my-info-part end-->
+
+  <!--profile-aboutme start-->
+  <div class="aboutme-container">
+    <p>我是Scully,
+      <br>台北人，
+      <br>將邁入21歲，
+      <br>一個將要畢業的年齡，
+      <br>也處於一個更加需要好好正視未來的狀態。
+      <br>我有很多樣的興趣，
+      <br>我喜歡唱歌、喜歡烹飪、喜歡學習語言、喜歡旅遊，
+      <br>最近還迷上了攝影，
+      <br>趁著離開台灣前砸錢買了我此生買過最貴的東西–一台微單眼。
+      <br>但在我所有愛好中，
+      <br>我覺得最能代表我，
+      <br>也幫助我最多的莫過於我愛交朋友的個性，
+      <br>在規劃歐洲旅遊期間，
+      <br>正因為我擁有各國的朋友，
+      <br>而幫助了我非常多。
+      <br>談談我的英文名字好了。
+      <br>當初，
+      <br>因為媽媽喜歡美國影集X file的女主角Scully，
+      <br>便如此替我取了個偶像的英文名，
+      <br>殊不知此字實際上是她的姓氏，
+      <br>不過也就將錯就錯這麼的用下來了，
+      <br>我很喜歡這個名字，
+      <br>儘管大家總是念錯，
+      <br>讓我的名字有著千奇百怪的念法，
+      <br>但正因為這樣讓我顯得更特別。
+      <br>不知不覺也打蠻多了，
+      <br>總之，
+      <br>希望大家都能很享受我的文字，
+      <br>跟著我一起遊歐洲吧😁
+
+    </p>
+  </div>
+
+  <!--profile-aboutme end-->
+  <!--footer start-->
+  <footer>
+    Walk Out , Read The World.
+    <br>InterFang&copy;
+  </footer>
+  <!--footer end-->
+
+  <!--bottom navbar start-->
+  <div class="bottom-nav ">
+    <div class="nav-item-row ">
+      <a href="./index.html">
+        <i class="fa fa-3x fa-home icon "></i>
+      </a>
+      <a href="./browse.html">
+        <i class="fa fa-3x fa-search icon "></i>
+      </a>
+      <a href="./post.html">
+        <i class="fa fa-3x fa-pencil icon "></i>
+      </a>
+      <a href="./chatRoom.html">
+        <i class="fa fa-3x fa-comment icon "></i>
+      </a>
+      <a href="./profile.html">
+        <i class="fa fa-3x fa-user icon "></i>
+      </a>
+    </div>
+    <div class="nav-item-row ">
+      <a href="./index.html">
+        <div class="icon-name ">HOME</div>
+      </a>
+      <a href="./browse.html">
+        <div class="icon-name ">BROWSE</div>
+      </a>
+      <a href="./post.html">
+        <div class="icon-name ">POST</div>
+      </a>
+      <a href="./chatRoom.html">
+        <div class="icon-name ">MESSAGE</div>
+      </a>
+      <a href="./profile.html">
+        <div class="icon-name ">PROFILE</div>
+      </a>
+    </div>
+  </div>
+  <!--bottom navbar end-->
+</body>
+
+<script>
+  function showMenu() {
+    document.getElementById("menu ").style.display = "inline-block "; //顯示sidenav
+    document.getElementById("hide-menu-block ").style.display = "inline-block "; //顯示透明色塊
+  }
+  function hideMenu() {
+    document.getElementById("menu ").style.display = "none "; //使用者點擊透明色塊，隱藏sidenav
+    document.getElementById("hide-menu-block ").style.display = "none "; //隱藏透明色塊
+    //把sidenav和透明色塊包在同一個class裡面，一起出現一起消失
+  }
+
+</script>
+
+</html>

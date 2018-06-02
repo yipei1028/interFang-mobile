@@ -5,8 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Activity</title>
+  <title>InterFang-Activity</title>
   <link rel="stylesheet" href="./style.css">
+  <link rel="Shortcut Icon" type="image/x-icon" href="./images/favicon.ico" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
@@ -28,224 +29,253 @@
   </nav>
   <!--top navbar end-->
 
-  <!--dropdown menu start-->
-  <div id="menu" class="dropdown-menu">
-    <div class="menu-item">
-      <a href="#">Link 1</a>
+  <!--calendar-part start-->
+
+  <div class="activity-select-container">
+    <div class="activity-select-item" style=" background-color: rgb(220, 220, 220);">
+      <a href="./activity.html">依日期顯示</a>
     </div>
-    <div class="menu-item">
-      <a href="#">Link 2</a>
-    </div>
-    <div class="menu-item">
-      <a href="#">Link 3</a>
-    </div>
-    <div class="menu-item">
-      <a href="#">Link 1</a>
-    </div>
-    <div class="menu-item">
-      <a href="#">Link 2</a>
-    </div>
-    <div class="menu-item">
-      <a href="#">Link 3</a>
+    <div class="activity-select-item" id="activity-select-item-by-distance">
+      <a href="./activity-1.html">依距離顯示</a>
     </div>
   </div>
-  <div class="dropdown-menu" id="hide-menu-block" onclick="hideMenu()"></div>
-  <!--dropdown menu end-->
-
-
-  <!--category browse bar start-->
-  <div class="category-browse-bar">
-    <div class="article-category" id="">
-      <a href="#">心情</a>
-    </div>
-    <div class="article-category" id="">
-      <a href="#">旅遊</a>
-    </div>
-    <div class="article-category" id="">
-      <a href="#">事前準備</a>
-    </div>
-    <div class="article-category" id="">
-      <a href="#">注意事項</a>
-    </div>
-    <div class="article-category" id="">
-      <a href="#">獎學金申請</a>
-    </div>
+  <div class="calendar-row">
+    <img src="./images/螢幕快照 2018-06-01 下午11.15.53.png" style="width:100%;" alt="">
   </div>
-  <!--category browse bar end-->
-
-
-
-  <!--main-article start-->
-  <div class="main-article">
-    <div class="article-info">
-      <div class="author-img">
+  <div class="activity-container">
+    <div class="activity-row">
+      <div class="activity-img">
+        <a href="https://www.dcard.tw/f">
+          <img src="./images/aziz-acharki-416318-unsplash.jpg" alt="">
+        </a>
       </div>
-      <div class="author-name"></div>
-      <span class="article-date">
-      </span>
-      <span class="article-time">
-      </span>
-    </div>
-    <div class="w3-content w3-display-container">
-      <img class="mySlides" src="./images/cover-0.jpg" style="width:100%">
-      <img class="mySlides" src="./images/cover-1.jpg" style="width:100%">
-      <img class="mySlides" src="./images/cover-2.jpeg" style="width:100%">
-      <img class="mySlides" src="./images/cover-3.jpg" style="width:100%">
-
-      <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
-      <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
-    </div>
-
-    <div class="article-content">
-      "內容給我放這裡rrrrr" "內容給我放這裡rrrrr
-    </div>
-  </div>
-  <!--main-article end-->
-
-  <!--tags-part start-->
-  <div class="tags-container">
-    <div class="tags-part-title">Tags...</div>
-    <div class="tags-part">
-      <div class="tag-item">標籤名稱</div>
-      <div class="tag-item">標籤名稱</div>
-      <div class="tag-item">標籤名稱標籤</div>
-      <div class="tag-item">標籤名稱</div>
-      <div class="tag-item">標籤名稱</div>
-      <div class="tag-item">標籤名稱標籤名稱標籤名稱</div>
-    </div>
-  </div>
-
-  <!--tags-part end-->
-
-  <!--recommend-article-part start-->
-  <div class="recommend-row-title">您可能會喜歡...</div>
-  <div class="recommend-row">
-    <div class=" recommend-browse-row-item ">
-      <div class="recommend-article-img "></div>
-    </div>
-    <div class="recommend-browse-row-item ">
-      <div class="recommend-article-img"></div>
-    </div>
-    <div class="recommend-browse-row-item">
-      <div class="recommend-article-img"></div>
-    </div>
-  </div>
-  <!--recommend-article-part end-->
-
-  <!--comment board start-->
-  <div class="commentboard-main-container">
-    <div class="commentboard-top-container">
-      <h1 style="color:rgb(52,53,59)"> Comment Board</h1>
-      <input type="text" placeholder="Name" id="nameInput">
-      <input type="text" placeholder="Leave some comments here..." id="commentInput">
-      <button id="submitBtn">Submit</button>
-    </div>
-    <div class="commentboard-bottom-container">
-      <div class="category-row">
-        <div class="category-item">Recent Questions</div>
-
-      </div>
-      <div class="comment-container">
-        <div class="comment-img">
-          <img src="./images/user-img.gif" alt="個人大頭照">
+      <div class="activity-content">
+        <div class="activity-content-title">
+          <ul>
+            <li>活動主題：</li>
+            <li>活動日期：</li>
+            <li>活動時間：</li>
+            <li>活動地點：</li>
+            <li>活動內容：</li>
+          </ul>
         </div>
-        <div class="comment-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor, eligendi?</div>
-        <div class="comment-btns">
-          <button>刪除</button>
-        </div>
-      </div>
-      <div class="comment-container">
-        <div class="comment-img">
-          <img src="./images/user-img.gif" alt="個人大頭照">
-        </div>
-        <div class="comment-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor, eligendi?</div>
-        <div class="comment-btns">
-          <button>刪除</button>
+        <div class="activity-content-content">
+          <li>草地音樂會</li>
+          <li>2018/07/31</li>
+          <li>14:00</li>
+          <li>大安森林公園</li>
+          <li>帶著朋友一起來吧！</li>
         </div>
       </div>
     </div>
-  </div>
-  <div>
-    <!--comment board end-->
-
-    <!--footer start-->
-    <footer>
-      Walk Out , Read The World.
-      <br>InterFang&copy;
-    </footer>
-    <!--footer end-->
-
-    <!--bottom navbar start-->
-    <div class="bottom-nav ">
-      <div class="nav-item-row ">
-        <a href="./index.html">
-          <i class="fa fa-3x fa-home icon "></i>
-        </a>
-        <a href="./browse.html">
-          <i class="fa fa-3x fa-search icon "></i>
-        </a>
-        <a href="./post.html">
-          <i class="fa fa-3x fa-pencil icon "></i>
-        </a>
-        <a href="./chatRoom.html">
-          <i class="fa fa-3x fa-comment icon "></i>
-        </a>
-        <a href="./profie.html">
-          <i class="fa fa-3x fa-user icon "></i>
+    <div class="activity-row">
+      <div class="activity-img">
+        <a href="#">
+          <img src="./images/galen-crout-78522-unsplash.jpg" alt="">
         </a>
       </div>
-      <div class="nav-item-row ">
-        <a href="./index.html">
-          <div class="icon-name ">HOME</div>
-        </a>
-        <a href="./browse.html">
-          <div class="icon-name ">BROWSE</div>
-        </a>
-        <a href="./post.html">
-          <div class="icon-name ">POST</div>
-        </a>
-        <a href="./chatRoom.html">
-          <div class="icon-name ">MESSAGE</div>
-        </a>
-        <a href="./profile.html">
-          <div class="icon-name ">PROFILE</div>
-        </a>
+      <div class="activity-content">
+        <div class="activity-content-title">
+          <ul>
+            <li>活動主題：</li>
+            <li>活動日期：</li>
+            <li>活動時間：</li>
+            <li>活動地點：</li>
+            <li>活動內容：</li>
+          </ul>
+        </div>
+        <div class="activity-content-content">
+          <li>爬象山看夜景</li>
+          <li>2018/09/11</li>
+          <li>20:00</li>
+          <li>象山捷運站一號出口</li>
+          <li>記得帶衣服來換喔！</li>
+        </div>
       </div>
     </div>
-    <!--bottom navbar end-->
+    <div class="activity-row">
+      <div class="activity-img">
+        <a href="#">
+          <img src="./images/jess-watters-483666-unsplash.jpg" alt="">
+        </a>
+      </div>
+      <div class="activity-content">
+        <div class="activity-content-title">
+          <ul>
+            <li>活動主題：</li>
+            <li>活動日期：</li>
+            <li>活動時間：</li>
+            <li>活動地點：</li>
+            <li>活動內容：</li>
+          </ul>
+        </div>
+        <div class="activity-content-content">
+          <li>業餘素描愛好者的集會</li>
+          <li>2018/0803</li>
+          <li>16:00</li>
+          <li>野薑花繪畫教室</li>
+          <li>請自備用具。</li>
+        </div>
+      </div>
+    </div>
+    <div class="activity-row">
+      <div class="activity-img">
+        <a href="#">
+          <img src="./images/matthieu-joannon-666790-unsplash.jpg" alt="">
+        </a>
+      </div>
+      <div class="activity-content">
+        <div class="activity-content-title">
+          <ul>
+            <li>活動主題：</li>
+            <li>活動日期：</li>
+            <li>活動時間：</li>
+            <li>活動地點：</li>
+            <li>活動內容：</li>
+          </ul>
+        </div>
+        <div class="activity-content-content">
+          <li>野餐趴踢</li>
+          <li>2018/06/30</li>
+          <li>13:00</li>
+          <li>大安森林公園</li>
+          <li>請記得先報名</li>
+        </div>
+      </div>
+    </div>
+    <div class="activity-row">
+      <div class="activity-img">
+        <a href="#">
+          <img src="./images/melissa-walker-horn-605715-unsplash.jpg" alt="">
+        </a>
+      </div>
+      <div class="activity-content">
+        <div class="activity-content-title">
+          <ul>
+            <li>活動主題：</li>
+            <li>活動日期：</li>
+            <li>活動時間：</li>
+            <li>活動地點：</li>
+            <li>活動內容：</li>
+          </ul>
+        </div>
+        <div class="activity-content-content">
+          <li>親子動手作烘焙教室</li>
+          <li>2017/10/15</li>
+          <li>18:00</li>
+          <li>台北市忠孝東路一段99號6F</li>
+          <li>酌收場地費：200/人</li>
+        </div>
+      </div>
+    </div>
+    <div class="activity-row">
+      <div class="activity-img">
+        <a href="#">
+          <img src="./images/paul-green-38404-unsplash.jpg" alt="">
+        </a>
+      </div>
+      <div class="activity-content">
+        <div class="activity-content-title">
+          <ul>
+            <li>活動主題：</li>
+            <li>活動日期：</li>
+            <li>活動時間：</li>
+            <li>活動地點：</li>
+            <li>活動內容：</li>
+          </ul>
+        </div>
+        <div class="activity-content-content">
+          <li>河濱騎腳踏車</li>
+          <li>2018/08/10</li>
+          <li>09:00</li>
+          <li>政治大學校門口</li>
+          <li>從政大出發騎到淡水</li>
+        </div>
+      </div>
+    </div>
+  </div>
 
-    <script>
-      function showMenu() {
-        document.getElementById("menu").style.display = "inline-block"; //顯示sidenav
-        document.getElementById("hide-menu-block").style.display = "inline-block"; //顯示透明色塊
+  <!--calendar-part end-->
+
+
+  <!--footer start-->
+  <footer>
+    Walk Out , Read The World.
+    <br>InterFang&copy;
+  </footer>
+  <!--footer end-->
+
+  <!--bottom navbar start-->
+  <div class="bottom-nav ">
+    <div class="nav-item-row ">
+      <a href="./index.html">
+        <i class="fa fa-3x fa-home icon "></i>
+      </a>
+      <a href="./browse.html">
+        <i class="fa fa-3x fa-search icon "></i>
+      </a>
+      <a href="./post.html">
+        <i class="fa fa-3x fa-pencil icon "></i>
+      </a>
+      <a href="./chatRoom.html">
+        <i class="fa fa-3x fa-comment icon "></i>
+      </a>
+      <a href="./profie.html">
+        <i class="fa fa-3x fa-user icon "></i>
+      </a>
+    </div>
+    <div class="nav-item-row ">
+      <a href="./index.html">
+        <div class="icon-name ">HOME</div>
+      </a>
+      <a href="./browse.html">
+        <div class="icon-name ">BROWSE</div>
+      </a>
+      <a href="./post.html">
+        <div class="icon-name ">POST</div>
+      </a>
+      <a href="./chatRoom.html">
+        <div class="icon-name ">MESSAGE</div>
+      </a>
+      <a href="./profile.html">
+        <div class="icon-name ">PROFILE</div>
+      </a>
+    </div>
+  </div>
+  <!--bottom navbar end-->
+
+  <script>
+    function showMenu() {
+      document.getElementById("menu").style.display = "inline-block"; //顯示sidenav
+      document.getElementById("hide-menu-block").style.display = "inline-block"; //顯示透明色塊
+    }
+    function hideMenu() {
+      document.getElementById("menu").style.display = "none"; //使用者點擊透明色塊，隱藏sidenav
+      document.getElementById("hide-menu-block").style.display = "none"; //隱藏透明色塊
+      //把sidenav和透明色塊包在同一個class裡面，一起出現一起消失
+    }
+
+  </script>
+
+  <script>
+    var slideIndex = 1;
+    showDivs(slideIndex);
+
+    function plusDivs(n) {
+      showDivs(slideIndex += n);
+    }
+
+    function showDivs(n) {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      if (n > x.length) { slideIndex = 1 }
+      if (n < 1) { slideIndex = x.length }
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
       }
-      function hideMenu() {
-        document.getElementById("menu").style.display = "none"; //使用者點擊透明色塊，隱藏sidenav
-        document.getElementById("hide-menu-block").style.display = "none"; //隱藏透明色塊
-        //把sidenav和透明色塊包在同一個class裡面，一起出現一起消失
-      }
-
-    </script>
-
-    <script>
-      var slideIndex = 1;
-      showDivs(slideIndex);
-
-      function plusDivs(n) {
-        showDivs(slideIndex += n);
-      }
-
-      function showDivs(n) {
-        var i;
-        var x = document.getElementsByClassName("mySlides");
-        if (n > x.length) { slideIndex = 1 }
-        if (n < 1) { slideIndex = x.length }
-        for (i = 0; i < x.length; i++) {
-          x[i].style.display = "none";
-        }
-        x[slideIndex - 1].style.display = "block";
-      }
-    </script>
+      x[slideIndex - 1].style.display = "block";
+    }
+  </script>
 </body>
 
 </html>
