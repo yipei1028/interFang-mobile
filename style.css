@@ -1098,6 +1098,10 @@ footer{
     position: relative;
 }
 
+.collection-item{
+    border:2px solid #c4c4c4;
+}
+
 .single-col > .post-cover-img >img{
     width:100%;
     height:100%;
